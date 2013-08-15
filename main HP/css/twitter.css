@@ -1,0 +1,107 @@
+img{
+     vertical-align:bottom;
+     }
+
+a:link { color: #0000ff; }
+a:visited { color: #000080; }
+a:hover { color: #ff0000; }
+a:active { color: #ff8000; }
+
+/* ticker*/
+#twitter-widget{
+                 padding:10px 5px 0;
+                 width:350px;/*300px*/
+                 height:450px;/*440px*/
+                 background: no-repeat #35bbf6;
+                 color:#35bbf6;
+                 moz-border-radius:0 0 6px 6px;
+                 khtml-border-radius: 0 0 6px 6px;
+                 webkit-border-radius:0 0 6px 6px;
+                 border-radius:0 0 6px 6px;
+                 }
+
+#tweet-container{
+                  height:360px;
+                  width:100%;
+                  overflow:auto;
+                  background:rgba(0,0,0,0.2);
+                  webkit-box-shadow: inset 1px 1px 3px 0px #000; /* Safari, Chrome用 */
+                  moz-box-shadow: inset 1px 1px 3px 0px #000; /* Firefox用 */
+                  box-shadow: inset 1px 1px 3px 0px #000; /* CSS3 */
+                  }
+
+#prof{
+       padding:0 8px;
+       height:60px;
+       overflow:hidden;
+       }
+#userPic{
+          float:left;
+          }
+#userPic img{
+              moz-border-radius:3px;
+              khtml-border-radius:3px;
+              webkit-border-radius:3px;
+              border-radius:3px;
+              }
+#screenName{
+             margin:0 0 0 55px;
+             font-weight:bold;
+             font-size:14px;
+             font-weight:normal;
+             }
+#screenName a{
+               color:#fff;
+               }
+#userName{
+           margin:0 0 0 55px;
+           color:#fff;
+           font-weight:normal;
+           }
+
+/*tweet*/
+.tweet{
+        margin:5px 8px;
+        padding:5px 0;
+        color:#fff;
+        width:auto;
+        overflow:hidden;
+        text-align:left;
+        font-weight:normal;
+        }
+
+/*post時間*/
+.tweet .time{
+              display:inline;
+              text-transform:uppercase;
+              font-size:10px;
+              color:#333333;
+              white-space:nowrap;
+              margin:left;
+              }
+/*retweet&favorite*/
+.tweet .action{
+                display:inline;
+                padding-left:1em;
+                margin:left;
+                }
+
+/*text*/
+.tweet .txt{
+             font-weight: normal;
+             text-align:left;
+             }
+
+/*scroll bar*/
+.jspTrack{
+           background-color:#fff;
+           webkit-box-shadow: inset 1px 1px 1px 0px #000; /* Safari, Chrome用 */
+           moz-box-shadow: inset 1px 1px 1px 0px #000; /* Firefox用 */
+           box-shadow: inset 1px 1px 1px 0px #000; /* CSS3 */
+           }
+.jspDrag{
+          background-color:#000;
+          webkit-box-shadow: inset -1px -1px 1px 0px #000; /* Safari, Chrome用 */
+          moz-box-shadow: inset -1px -1px 1px 0px #000; /* Firefox用 */
+          box-shadow: inset -1px -1px 1px 0px #000; /* CSS3 */
+          }

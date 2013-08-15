@@ -1,0 +1,238 @@
+<html lang="ja">
+
+    <head>
+<!--         <embed src="http://about-hiroppy.com/flash/HP_background/" width="100%" height="100%">-->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>flash</title>
+        <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="js/jarallax.js"></script>
+        <script type="text/javascript" src="shadowbox/shadowbox.js"></script>
+        <link rel="stylesheet" type="text/css" href="shadowbox/shadowbox.css">
+        <link rel="stylesheet" type="text/css" href="css/style_light.css">
+        <script type="text/javascript">
+            var jarallax
+              init = function() {
+                jarallax = new Jarallax(new ControllerScroll(true));
+                var currentProgress = 0;
+                var progressSteps = 1 / 8;
+
+                jarallax.setDefault('.container',{opacity:0, display:'none'})
+
+//                jarallax.addAnimation('.logo',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+//                                               {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+//                                               {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+//                                jarallax.addAnimation('#about',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+//                                               {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+//                                               {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+
+                var f_animation = jarallax.addAnimation('#about',[{progress:'0', display:'block', opacity:'1', top:'100%'},
+                                                                 {progress:'10', display:'block', opacity:'0', top:'10%'},
+                                                                 {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+
+                var animation = jarallax.addAnimation('#slide1',[{progress:'0', display:'block', opacity:'0', top:'100%'},
+                                                                 {progress:'10', display:'block', opacity:'1', top:'10%'},
+                                                                 {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+
+                jarallax.cloneAnimation('#slide2',{progress:'+10'}, animation);
+                jarallax.cloneAnimation('#slide3',{progress:'+20'}, animation);
+                jarallax.cloneAnimation('#slide4',{progress:'+30'}, animation);
+                jarallax.cloneAnimation('#slide5',{progress:'+40'}, animation);
+                jarallax.cloneAnimation('#slide6',{progress:'+50'}, animation);
+                jarallax.cloneAnimation('#slide7',{progress:'+60'}, animation);
+
+                  var cnt = 0;
+                  var n = 50;
+                  var img_all = Math.floor((innerHeight-20)/6);
+        //        var img_w = (innerWidth-20)/8;
+          for(var i=0;i<n;i++){
+            var url = './DB/flash.json';
+            $.getJSON(url, function(data){
+              for(var key in data){
+                          var genre = data[key][cnt].genre;
+                          var url_main = data[key][cnt].url_main;
+                          var url_bg = data[key][cnt].url_bg;
+                          var name = data[key][cnt].name;
+                          var id = data[key][cnt].id;
+
+                          //ALL
+        //                $("div.ALL").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+        //                  "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+
+                          if(genre.indexOf("Physics",0) != -1){
+                          $("div.Physics").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                          if(genre.indexOf("Particle",0) != -1){
+                          $("div.Particle").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                          if(genre.indexOf("Effect",0) != -1){
+                          $("div.Effect").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                          if(genre.indexOf("Clock",0) != -1){
+                          $("div.Clock").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                          if(genre.indexOf("Sound",0) != -1){
+                          $("div.Sound").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                          if(genre.indexOf("3D",0) != -1){
+                          $("div.3D").append("<a href="+url_main+" rel=shadowbox;height=500;width=500 title= "+name+">"+
+                          "<img src="+url_bg+" width="+img_all+" height="+img_all+" alt="+id+"></a>");
+                          }
+                cnt++;
+                if(cnt == 21){ //修正を加えるべき
+//                console.log(cnt +"  "+n);
+              Shadowbox.init({
+              language:   "ja",
+              players:    ["iframe","html","img","swf"] });
+              }
+              }
+            });
+              }
+              }
+        </script>
+        <!-- <script type="text/javascript">
+      Shadowbox.init({
+      language:   "ja",
+      players:    ["iframe","html","img","swf"] });
+    </script>
+-->
+    </head>
+    <body onLoad='init()'>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress(  0, 1500, 60);">BackGround</a>
+                </li>
+                <!-- <li><a href="#" onClick="jarallax.jumpToProgress( 10, 2000, 20);">ALL</a></li>-->
+                <!-- <li><a href="#" onClick="jarallax.jumpToProgress( 20, 2000, 20);">Physics</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 30, 2000, 20);">Particle</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 40, 2000, 20);">Effect</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 50, 2000, 20);">Clock</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 60, 2000, 20);">Sound</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 70, 2000, 20);">3D</a></li>
+-->
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 10, 1500, 60);">Physics</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 20, 1500, 60);">Particle</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 30, 1500, 60);">Effect</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 40, 1500, 60);">Clock</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 50, 1500, 60);">Sound</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 60, 1500, 60);">3D</a>
+                </li>
+                <li>
+                    <a href="#" onClick="jarallax.jumpToProgress( 70, 1500, 60);">Profile</a>
+                </li>
+                <li>
+                    <a href="http://about-hiroppy.com/" target="_blank">Main_Site</a>
+                </li>
+                <li>
+                    <a href="./index.html" target="_blank">Flash_Site</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- <div class="container" id="slide1">
+        <div class="ALL"></div>
+    </div>
+-->
+<!--
+        <div class="container" id="logo">
+            <h3>welcome to my site</h3>
+            <h3>my name is about_hiroppy</h3>
+        </div>
+-->
+<!--        <h1 class="logo">Jarallax</h1>-->
+        <div id="about"><ab><br>This site has my FLASH works!</ab></div>
+
+        <div class="container" id="slide1">
+            <h2>Physics</h2>
+            <div class="Physics"></div>
+        </div>
+        <div class="container" id="slide2">
+            <h2>Particle</h2>
+            <div class="Particle"></div>
+        </div>
+        <div class="container" id="slide3">
+            <h2>Effect</h2>
+            <div class="Effect"></div>
+        </div>
+        <div class="container" id="slide4">
+            <h2>Clock</h2>
+            <div class="Clock"></div>
+        </div>
+        <div class="container" id="slide5">
+            <h2>Sound</h2>
+            <div class="Sound"></div>
+        </div>
+        <div class="container" id="slide6">
+            <h2>3D</h2>
+            <div class="3D"></div>
+        </div>
+        <div class="container" id="slide7">
+            <h2>Profile</h2>
+<!--            //innerwidthが使えるのか不明-->
+            <table align="center" width="innerWidth">
+                <tr>
+                    <td>name:</td>
+                    <td>廣戸 裕大</td>
+                </tr>
+                <tr>
+                    <td>birthday:</td>
+                    <td>1992/04/29</td>
+                </tr>
+                <tr>
+                    <td>hobby:</td>
+                    <td>programming,jazz,driving</td>
+                </tr>
+                <tr>
+                    <td>language:</td>
+                    <td>Japanese,English</td>
+                </tr>
+                <tr>
+                    <td>skill:</td>
+                    <td>C,C++,C#,PHP,ActionScript,WhiteSpace</td>
+                </tr>
+                <tr>
+                    <td>lab:</td>
+                    <td>IPL in UOA</td>
+                </tr>
+                <tr>
+                    <td>club:</td>
+                    <td>ICPC部(ICPC2012年出場)</td>
+                </tr>
+                <tr>
+                    <td>car:</td>
+                    <td>AQUA(TOYOTA)</td>
+                </tr>
+                <tr>
+                    <td>foundation:</td>
+                    <td>2013/04/04</td>
+                </tr>
+                <tr>
+                    <td>mail:</td>
+                    <td>dreams.come.true.about[at]gmail.com</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            try{
+              var pageTracker = _gat._getTracker("UA-26904605-1");
+              pageTracker._trackPageview();
+              } catch(err) {}
+        </script>
+    </body>
+
+</html>

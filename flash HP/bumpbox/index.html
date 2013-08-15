@@ -1,0 +1,182 @@
+<html lang="ja">
+  <head>
+    <!-- <embed src="http://about-hiroppy.com/flash/HP_background/" width="100%" height="100%"> -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>flash</title>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script type="text/javascript" src="js/scroll_animation.js"></script>
+    <script type="text/javascript" src="shadowbox/shadowbox.js"></script>
+    <link rel="stylesheet" type="text/css" href="shadowbox/shadowbox.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript">
+	  $(document).ready(function() {
+	  $('a.link').click(function () {
+	  $('#wrapper').scrollTo($(this).attr('href'), 100);
+	  $('a.link').removeClass('selected');
+	  $(this).addClass('selected');
+	  return false;
+	  });
+	  });
+	  function setPosition(check,div,p1,p2,p3,p4,p5,p6,p7) {
+	  if(check==='#box1') $(div).scrollTo(p1, 800);
+	  else if(check==='#box2') $(div).scrollTo(p2, 800);
+	  else if(check==='#box3') $(div).scrollTo(p3, 800);
+      else if(check==='#box4') $(div).scrollTo(p4, 800);
+      else if(check==='#box5') $(div).scrollTo(p5, 800);
+      else if(check==='#box6') $(div).scrollTo(p6, 800);
+	  else $(div).scrollTo(p7, 800);
+	  };
+	</script>
+    <script type="text/javascript">  
+      Shadowbox.init({  
+      language:   "ja",
+      players:    ["iframe","html","img","swf"] });
+    </script>  
+  </head>  
+  <body>
+	<div id="header">
+      <div id="title">
+        <h1>作成中<h1>
+      </div>
+      <ul id="menu">
+       	<li><a href="#box1" class="link">ALL</a></li>
+        <li><a href="#box2" class="link">Physics</a></li>
+        <li><a href="#box3" class="link">Particle</a></li>
+        <li><a href="#box4" class="link">Analysis</a></li>
+        <li><a href="#box5" class="link">Clock</a></li>
+        <li><a href="#box6" class="link">Sound</a></li>
+        <li><a href="#box7" class="link">Other</a></li>
+      </ul>
+    </div>
+	<div id="wrapper">
+      <ul id="mask">
+        <li id="box1" class="box">
+          <a name="ALL"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/work2/work2.swf" rel="shadowbox;height=500;width=500"title="Physics-animation">
+                <img src="./work/work2/work2.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/coding_animation/coding_animation.swf" rel="shadowbox;height=465;width=465"title="coding various languages (どうも環境依存してしまう><)">
+                <img src="./work/coding_animation/coding_animation.jpg" width="150" height="150" alt="other"></a>
+              <a href="./work/music/music.swf" rel="shadowbox;height=500;width=500"title="音楽の左右の大きさの表現。マウスカーソルで波紋を描けます">
+                <img src="./work/music/music.jpg" width="150" height="150" alt="sound"></a>
+              <a href="./work/basic_clock/clock.swf" rel="shadowbox;height=500;width=500"title="初めて作ったもの。センスはないヨ">
+                <img src="./work/basic_clock/clock.jpg" width="150" height="150" alt="clock"></a>
+              <a href="./work/ragdoll/Ragdoll.swf" rel="shadowbox;height=500;width=500"title="RagDoll library作成のために作った作品">
+                <img src="./work/ragdoll/ragdoll.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/loading/loading.swf" rel="shadowbox;height=500;width=500"title="Hexagram">
+                <img src="./work/loading/loading.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/particle1/particle.swf" rel="shadowbox;height=500;width=500"title="particle animation">
+                <img src="./work/particle1/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="./work/particle3/particle.swf" rel="shadowbox;height=500;width=500"title="3D particle animation">
+                <img src="./work/particle3/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="./work/slime/slime.swf" rel="shadowbox;height=500;width=500"title="可愛いslimeです。愛してます">
+                <img src="./work/slime/slime.jpg" width="150" height="150" alt="box2D"></a>
+              <a href="./work/Mona_Lisa/mona.swf" rel="shadowbox;height=500;width=500"title="有名な絵画です">
+                <img src="./work/Mona_Lisa/mona.jpg" width="150" height="150" alt="Analysis"></a>
+              <a href="http://about-hiroppy.com/flash/work/particle6/index.html" rel="shadowbox;height=500;width=500"title="particle_stars">
+                <img src="./work/particle6/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="./work/particle2/particle.swf" rel="shadowbox;height=500;width=500"title="3D forcemap">
+                <img src="./work/particle2/particle.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/particle4/particle.swf" rel="shadowbox;height=500;width=500"title="BlendModeの実験です">
+                <img src="./work/particle4/particle.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/mouse/mouse.swf" rel="shadowbox;height=500;width=500"title="mouse_animation">
+                <img src="./work/mouse/mouse.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/Mona_Lisa2/mona.swf" rel="shadowbox;height=500;width=500"title="有名な絵画です(part2)">
+                <img src="./work/Mona_Lisa2/mona.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/clock1/clock.swf" rel="shadowbox;height=500;width=500"title="clock!">
+                <img src="./work/clock1/clock.jpg" width="150" height="150" alt="Clock"></a>
+              <a href="./work/sound1/sound1.swf" rel="shadowbox;height=500;width=500"title="美しさを求めてみました">
+                <img src="./work/sound1/sound1.jpg" width="150" height="150" alt="Clock"></a>
+              <a href="http://about-hiroppy.com/flash/work/particle5/index.html" rel="shadowbox;height=500;width=500"title="fire??">
+                <img src="./work/particle5/particle.jpg" width="150" height="150" alt="particle"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box2" class="box">
+          <a name="Physics"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/work2/work2.swf" rel="shadowbox;height=500;width=500"title="Physics-animation">
+                <img src="./work/work2/work2.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/ragdoll/Ragdoll.swf" rel="shadowbox;height=500;width=500"title="RagDoll library作成のために作った作品">
+                <img src="./work/ragdoll/ragdoll.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/loading/loading.swf" rel="shadowbox;height=500;width=500"title="Hexagram">
+                <img src="./work/loading/loading.jpg" width="150" height="150" alt="Box2D"></a>
+              <a href="./work/slime/slime.swf" rel="shadowbox;height=500;width=500"title="可愛いslimeです。愛してます">
+                <img src="./work/slime/slime.jpg" width="150" height="150" alt="box2D"></a>
+              <a href="./work/sound1/sound1.swf" rel="shadowbox;height=500;width=500"title="美しさを求めてみました">
+                <img src="./work/sound1/sound1.jpg" width="150" height="150" alt="Clock"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box3" class="box">
+          <a name="Particle"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/particle1/particle.swf" rel="shadowbox;height=500;width=500"title="particle animation">
+                <img src="./work/particle1/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="./work/particle3/particle.swf" rel="shadowbox;height=500;width=500"title="3D particle animation">
+                <img src="./work/particle3/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="http://about-hiroppy.com/flash/work/particle5/index.html" rel="shadowbox;height=500;width=500"title="fire??">
+                <img src="./work/particle5/particle.jpg" width="150" height="150" alt="particle"></a>
+              <a href="./work/particle2/particle.swf" rel="shadowbox;height=500;width=500"title="3D forcemap">
+                <img src="./work/particle2/particle.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/particle4/particle.swf" rel="shadowbox;height=500;width=500"title="BlendModeの実験です">
+                <img src="./work/particle4/particle.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="http://about-hiroppy.com/flash/work/particle6/index.html" rel="shadowbox;height=500;width=500"title="particle_stars">
+                <img src="./work/particle6/particle.jpg" width="150" height="150" alt="particle"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box4" class="box">
+          <a name="Analysis"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/Mona_Lisa/mona.swf" rel="shadowbox;height=500;width=500"title="有名な絵画です">
+                <img src="./work/Mona_Lisa/mona.jpg" width="150" height="150" alt="Analysis"></a>
+              <a href="./work/Mona_Lisa2/mona.swf" rel="shadowbox;height=500;width=500"title="有名な絵画です(part2)">
+                <img src="./work/Mona_Lisa2/mona.jpg" width="150" height="150" alt="Particle"></a>
+              <a href="./work/particle4/particle.swf" rel="shadowbox;height=500;width=500"title="BlendModeの実験です">
+                <img src="./work/particle4/particle.jpg" width="150" height="150" alt="Particle"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box5" class="box">
+          <a name="Clock"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/basic_clock/clock.swf" rel="shadowbox;height=500;width=500"title="初めて作ったもの。センスはないヨ">
+                <img src="./work/basic_clock/clock.jpg" width="150" height="150" alt="clock"></a>
+              <a href="./work/clock1/clock.swf" rel="shadowbox;height=500;width=500"title="clock!">
+                <img src="./work/clock1/clock.jpg" width="150" height="150" alt="Clock"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box6" class="box">
+          <a name="Sound"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/music/music.swf" rel="shadowbox;height=500;width=500"title="音楽の左右の大きさの表現。マウスカーソルで波紋を描けます">
+                <img src="./work/music/music.jpg" width="150" height="150" alt="sound"></a>
+              <a href="./work/sound1/sound1.swf" rel="shadowbox;height=500;width=500"title="美しさを求めてみました">
+                <img src="./work/sound1/sound1.jpg" width="150" height="150" alt="Clock"></a>
+            </div>
+          </div>
+        </li>
+        <li id="box7" class="box">
+          <a name="Other"></a>
+          <div class="content">
+            <div class="inner">
+              <a href="./work/coding_animation/coding_animation.swf" rel="shadowbox;height=465;width=465"title="coding various languages (どうも環境依存してしまう><)"> <img src="./work/coding_animation/coding_animation.jpg" width="150" height="150" alt="other"></a>
+              <a href="./work/mouse/mouse.swf" rel="shadowbox;height=500;width=500"title="mouse_animation">
+                <img src="./work/mouse/mouse.jpg" width="150" height="150" alt="Particle"></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

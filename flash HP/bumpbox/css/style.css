@@ -1,0 +1,124 @@
+html{
+    background:#67b2ff;
+    /* background-image: url(../image/p1.jpg); */
+    background-size: auto;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#title h1{
+    font-size: 50px;
+    color: #0;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+#title h2{
+    font-size: 25px;
+    color: red;
+    position: absolute;
+    top: 30px;
+    left: 220px;
+}
+
+
+#menu{
+    float: left;
+    position:absolute;
+    top:20%;
+    /* right:10px; */
+    left: 1%;
+    z-index:10px;
+}
+
+#menu a{
+    background:#FFF;
+    color:#67b2ff;
+    border:#AAA 3px solid;
+    text-decoration:none;
+    padding:10px;
+	margin-right:10px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+#menu a:hover{
+    background:#67b2ff;
+    color:#FFF;
+    border:#FFF 3px solid;
+    text-decoration:none;
+    padding:10px;
+	margin-right:10px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+#menu a.selected{
+    background:#AAA;
+    color:#FFF;
+    border:#67b2ff 3px solid;
+    text-decoration:none;
+    padding:10px;
+	margin-right:10px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+
+#menu li{
+    float:left;    
+}
+
+#wrapper{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    overflow:hidden;
+}
+
+#mask{
+    width:400%;
+    height:100%;
+}
+
+.box{
+    width:25%;
+    height:100%;
+    float:left;
+}
+
+.content{
+    /* opacity: 0.7; */
+    /* -moz-opacity: 0.7; */
+    /* width:960px; */
+    /* height:500px; */
+    width: 90%;
+    height: 99%;
+    /* top:13%; */
+    margin: 0 auto;
+    position:relative;
+    /* background:rgba(255,255,255, 0.3); */
+	/* border-radius:35px; */
+    /* -moz-border-radius:35px; */
+    /* -webkit-border-radius:35px; */
+}
+
+.inner{
+    /* width:920px; */
+    width: 100%;
+    /* height:460px; */
+    height: 92%;
+    background:rgba(255, 255, 255, 0.3);
+    border-radius:30px;
+    -moz-border-radius:30px;
+	-webkit-border-radius:30px;
+    margin:15px;
+    padding:15px;
+    /* top:5px; */
+    position:relative;
+}
+
