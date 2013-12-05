@@ -3,12 +3,17 @@
   <head>
     <title>test</title>
     <meta charset="UTF-8">
+    <meta name="author" content="Yuta Hiroto">
+
     <link rel="stylesheet" href="metro-css/metro-bootstrap.css">
+    <link rel="stylesheet" href="metro-css/metro-bootstrap-responsive.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="js/jquery.widget.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.widget.min.js"></script>
+    <!-- metroを一括読み込み -->
+    <script type="text/javascript" src="js/import.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="metro-js/metro-*.js"></script> -->
+
   </head>
   <body class="metro">
     <div class="body-container">
@@ -25,6 +30,121 @@
       </header>
       <div class="row"></div>
       <div class="container">
+
+        <!-- time -->
+         <div class="tile double bg-lightPink">
+            <div id="tile-padding"></div>
+            <div class="times" data-role="times" data-style-background="bg-lightBlue" data-style-divider="fg-lightBlue"></div>
+            <div class="countdown" data-role="countdown" data-style-background="bg-teal" data-style-foreground="fg-yellow"></div>
+            <div class="tile-status">
+                <span class="name">Time</span>
+           </div>
+        </div>
+
+        <!-- github -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-github"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Github</span>
+          </div>
+        </div>
+
+        <!-- AOJ -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-stats-up"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">AOJ</span>
+          </div>
+        </div>
+
+        <!-- facebook -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-twitter"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Twitter</span>
+          </div>
+        </div>
+
+        <!-- facebook -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-facebook"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Facebook</span>
+          </div>
+        </div>
+
+
+        <!-- profile -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-user-3"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">User</span>
+          </div>
+        </div>
+
+        <!-- Flash -->
+        <div class="tile double">
+            <div class="tile-content image">
+                <img src="images/flash-bg.jpg">
+            </div>
+            <div class="brand">
+                <span class="label fg-white">Flash</span>
+            </div>
+        </div>
+
+        <!-- windows App -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-windows"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Windows App</span>
+          </div>
+        </div>
+
+        <!-- iPhone App -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-apple"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">iPhone App</span>
+          </div>
+        </div>
+
+        <!-- twitter bot -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-rocket"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Twitter bot</span>
+          </div>
+        </div>
+
+        <!-- web app -->
+         <div class="tile bg-cyan">
+          <div class="tile-content icon">
+            <i class="icon-laptop"></i>
+          </div>
+          <div class="tile-status">
+            <span class="name">Web App</span>
+          </div>
+        </div>
+
+
+        <!-- calendar -->
+        <!-- <div class="span4"><div class="calendar small" data-role="calendar"></div></div> -->
 
       </div>
     </div>
