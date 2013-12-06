@@ -10,6 +10,7 @@ var eventFunction = function(){
     if(id === undefined) return;
     if($("#"+id).find('a').attr('href') === undefined) return;
     else location.href = $("#"+id).find('a').attr('href');
+
   });
 
   //逃走の音を入れたい
