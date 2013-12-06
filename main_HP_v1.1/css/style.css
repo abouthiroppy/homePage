@@ -10,7 +10,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right bottom;*/
-    overflow: auto;
+    /*overflow: auto;*/
     text-decoration:none;
 }
 
@@ -53,9 +53,13 @@ header{
 .container{
     width:1080px;
     height:400px;
-    overflow-x:auto;
+    overflow:hidden;
     /*border-width: 1px;*/
     /*border-style: solid;*/
+}
+
+#container-top{
+    padding-top: 2px;
 }
 
 #tile-padding{
