@@ -6,8 +6,10 @@ $(document).ready(function(){
 var eventFunction = function(){
 
   $('div').click(function() {
-    // var w=window.open();
-    location.href = $(this).find('a').attr('href');
+    id = $(this).attr("id");
+    if(id === undefined) return;
+    if($("#"+id).find('a').attr('href') === undefined) return;
+    else location.href = $("#"+id).find('a').attr('href');
   });
 
   //逃走の音を入れたい
