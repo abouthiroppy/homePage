@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>test</title>
+    <title>about_hiroppy</title>
     <meta charset="UTF-8">
     <meta name="author" content="Yuta Hiroto">
 
@@ -12,6 +12,8 @@
     <script type="text/javascript" src="js/jquery.widget.min.js"></script>
     <!-- metroを一括読み込み -->
     <script type="text/javascript" src="js/import.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
     <script src="js/main.js"></script>
 
   </head>
@@ -32,7 +34,7 @@
       <div class="container">
 
         <!-- time -->
-         <div class="tile double bg-lightPink">
+         <div class="tile double bg-lightPink" id="time-tile">
             <div id="tile-padding"></div>
             <div class="times" data-role="times" data-style-background="bg-lightBlue" data-style-divider="fg-lightBlue"></div>
             <div class="countdown" data-role="countdown" data-style-background="bg-teal" data-style-foreground="fg-yellow"></div>
@@ -42,17 +44,18 @@
         </div>
 
         <!-- github -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="github-tile">
           <div class="tile-content icon">
             <i class="icon-github"></i>
           </div>
           <div class="tile-status">
             <span class="name">Github</span>
           </div>
+          <a href="http://github.com/abouthiroppy"></a>
         </div>
 
         <!-- AOJ -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="aoj-tile">
           <div class="tile-content icon">
             <i class="icon-stats-up"></i>
           </div>
@@ -61,8 +64,8 @@
           </div>
         </div>
 
-        <!-- facebook -->
-         <div class="tile bg-cyan">
+        <!-- twitter -->
+         <div class="tile bg-cyan" id="twitter-tile">
           <div class="tile-content icon">
             <i class="icon-twitter"></i>
           </div>
@@ -72,7 +75,7 @@
         </div>
 
         <!-- facebook -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="facebook-tile">
           <div class="tile-content icon">
             <i class="icon-facebook"></i>
           </div>
@@ -82,7 +85,7 @@
         </div>
 
         <!-- Another accounts -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="another-account-tile">
           <div class="tile-content icon">
             <i class="icon-user-2"></i>
           </div>
@@ -93,7 +96,7 @@
 
         <!-- Flash -->
 
-        <div class="tile double">
+        <div class="tile double" id="flash-tile">
           <div class="tile-content image-set">
             <img src="images/flash-bg1.jpg">
             <img src="images/flash-bg2.jpg">
@@ -107,7 +110,7 @@
         </div>
 
         <!-- windows App -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="windows-app-tile">
           <div class="tile-content icon">
             <i class="icon-windows"></i>
           </div>
@@ -117,7 +120,7 @@
         </div>
 
         <!-- iPhone App -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="iphone-app-tile">
           <div class="tile-content icon">
             <i class="icon-apple"></i>
           </div>
@@ -127,7 +130,7 @@
         </div>
 
         <!-- twitter bot -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="twitter-bot-tile">
           <div class="tile-content icon">
             <i class="icon-rocket"></i>
           </div>
@@ -137,7 +140,7 @@
         </div>
 
         <!-- web app -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="web-app-tile">
           <div class="tile-content icon">
             <i class="icon-laptop"></i>
           </div>
@@ -147,7 +150,7 @@
         </div>
 
         <!-- blog -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="blog-tile">
           <div class="tile-content icon">
             <i class="icon-pencil"></i>
           </div>
@@ -156,10 +159,7 @@
           </div>
         </div>
 
-        <!-- calendar -->
-        <!-- <div class="span4"><div class="calendar small" data-role="calendar"></div></div> -->
-
-         <div class="tile double live" data-role="live-tile" data-effect="slideRight">
+         <div class="tile double live" data-role="live-tile" data-effect="slideRight" id="picture-tile">
             <div class="tile-content image">
                 <img src="images/flash-bg1.jpg">
             </div>
@@ -178,7 +178,7 @@
         </div>
 
         <!-- information -->
-        <div class="tile double">
+        <div class="tile double" id="information-tile">
           <div class="tile-content image">
                 <img src="images/info.jpg">
           </div>
@@ -188,7 +188,7 @@
         </div>
 
         <!-- profile -->
-        <div class="tile double">
+        <div class="tile double" id="profile-tile">
           <div class="tile-content image">
                 <img src="images/profile.jpg">
           </div>
@@ -198,7 +198,7 @@
         </div>
 
         <!-- 爆発させたい -->
-         <div class="tile bg-cyan">
+         <div class="tile bg-cyan" id="explode-tile">
           <div class="tile-content icon">
             <i class="icon-smiley"></i>
           </div>
