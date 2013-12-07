@@ -13,6 +13,11 @@ var eventFunction = function(){
 
   });
 
+  $('button').click(function(){
+    if($(this).find('a').attr('href') === undefined) return;
+    else location.href = $(this).find('a').attr('href');
+  });
+
   //逃走の音を入れたい
   // easeInElastic
   $("#explode-tile").click(function(){
