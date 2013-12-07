@@ -17,7 +17,8 @@
     <script src="js/main.js"></script>
 
   </head>
-  <body class="metro">
+  <body class="metro" id="body-id">
+    <div class="spinner"></div>
     <div class="body-container">
       <header>
         <h1 class="start">
@@ -27,12 +28,12 @@
           <h2>
             about_hiroppy
           </h2>
-          <img src="images/101010.GIF" alt="profile-image">
+          <img src="images/101010.GIF" alt="profile-image" style="margin-left: 5px;">
         </div>
       </header>
       <div class="row"></div>
       <div class="container">
-
+        <div id="container-top"></div>
         <!-- time -->
          <div class="tile double bg-lightPink" id="time-tile">
             <div id="tile-padding"></div>
@@ -62,6 +63,7 @@
           <div class="tile-status">
             <span class="name">AOJ</span>
           </div>
+          <a href="http://judge.u-aizu.ac.jp/onlinejudge/user.jsp?id=about"></a>
         </div>
 
         <!-- twitter -->
@@ -72,6 +74,7 @@
           <div class="tile-status">
             <span class="name">Twitter</span>
           </div>
+          <a href="http://twitter.com/about_hiroppy"></a>
         </div>
 
         <!-- facebook -->
@@ -82,16 +85,18 @@
           <div class="tile-status">
             <span class="name">Facebook</span>
           </div>
+          <a href="http://www.facebook.com/abouthiroppy"></a>
         </div>
 
-        <!-- Another accounts -->
+        <!-- All accounts -->
          <div class="tile bg-cyan" id="another-account-tile">
           <div class="tile-content icon">
             <i class="icon-user-2"></i>
           </div>
           <div class="tile-status">
-            <span class="name">Another Accounts</span>
+            <span class="name">All Accounts</span>
           </div>
+          <a href="allAccounts.html"></a>
         </div>
 
         <!-- Flash -->
@@ -107,6 +112,7 @@
           <div class="brand">
             <span class="label fg-white">Flash</span>
           </div>
+          <a href="http://about-hiroppy.com/flash/"></a>
         </div>
 
         <!-- windows App -->
@@ -117,6 +123,7 @@
           <div class="tile-status">
             <span class="name">Windows App</span>
           </div>
+          <a href="windowsApp.html"></a>
         </div>
 
         <!-- iPhone App -->
@@ -127,6 +134,7 @@
           <div class="tile-status">
             <span class="name">iPhone App</span>
           </div>
+          <a href="iphoneApp.html"></a>
         </div>
 
         <!-- twitter bot -->
@@ -201,9 +209,6 @@
          <div class="tile bg-cyan" id="explode-tile">
           <div class="tile-content icon">
             <i class="icon-smiley"></i>
-          </div>
-          <div class="tile-status">
-            <span class="name">Other</span>
           </div>
         </div>
 

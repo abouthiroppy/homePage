@@ -13,16 +13,21 @@
     <script type="text/javascript" src="js/jquery.easing.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript">
-          $(function(){
-        $(".include-header").load("header.html");
-      })
-    </script>
   </head>
-  <body class="metro">
+  <body class="metro" id="body-id">
+    <div class="spinner"></div>
     <div class="body-container">
-      <div class="include-header"></div>
+      <header>
+      <ul class="header-ul">
+        <li class="header-li">
+          <div id="return-index">
+            <img src="images/arrow-left.png" class="return-image">
+            <a href="index.html"></a>
+          </div>
+        </li>
+        <li class="header-li header-title" id="header-title-id"><h1>ALL ACCOUNTS</h1></li>
+      </ul>
+    </header>
       <div class="row"></div>
       <div class="container">
         <div class="account-table">
