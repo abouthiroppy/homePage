@@ -1,5 +1,21 @@
+$(window).load(function() {
+  $('.spinner').append("<h1 class=\"loader\"><span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span></h1>");
+  $('.spinner').animate({
+      'opacity' : 0
+  }, 1000, 'easeOutCubic', function() {
+      jQuery(this).css('display', 'none')
+  });
+});
+
 $(document).ready(function(){
   console.log("complete");
+
+  $('.body-container:not(body#body-id .body-container)').css({display:'block',marginLeft:$(window).width(),opacity:'0'});
+  $('.body-container:not(body#body-id .body-container)').animate({marginLeft:'0px',opacity:'1'},500);
+
+  $('body#body-id .body-container').css({display:'block',opacity:'0'});
+  $('body#body-id .body-container').animate({opacity:'1'},500);
+
   eventFunction();
 });
 
@@ -9,14 +25,22 @@ var eventFunction = function(){
     id = $(this).attr("id");
     if(id === undefined) return;
     if($("#"+id).find('a').attr('href') === undefined) return;
-    else location.href = $("#"+id).find('a').attr('href');
-
+    jumpLink($("#"+id).find('a').attr('href'));
   });
 
   $('button').click(function(){
     if($(this).find('a').attr('href') === undefined) return;
-    else location.href = $(this).find('a').attr('href');
+    jumpLink($(this).find('a').attr('href'));
   });
+
+  var jumpLink = function(url){
+    $('.body-container').animate({marginLeft:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
+        location.href = url;
+        setTimeout(function(){
+          $('.body-container').css({marginLeft:'0',opacity:'1'})
+        },1000);
+      });
+    };
 
   //逃走の音を入れたい
   // easeInElastic
