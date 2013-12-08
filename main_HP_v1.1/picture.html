@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yuta Hiroto">
+
+    <link rel="stylesheet" href="metro-css/metro-bootstrap.css">
+    <link rel="stylesheet" href="metro-css/metro-bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/camera.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.widget.min.js"></script>
+    <script type="text/javascript" src="js/import.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/camera.js"></script>
+    <script type="text/javascript">
+      $(function(){
+          $('#slide').camera({
+              loader: 'bar',
+              thumbnails: true,
+              pagination: false,
+              barPosition: 'top',
+              hover: false,
+              navigation: false,
+              playPause: false,
+              loaderColor: '#1FAEFF',
+              loaderBgColor: '#111',
+              loaderOpacity: 0.85,
+              pauseOnClick: true
+          });
+      });
+    </script>
+  </head>
+  <body class="metro" id="body-id">
+    <div class="spinner"></div>
+    <div class="body-container">
+      <header>
+        <ul class="header-ul">
+          <li class="header-li">
+            <div id="return-index">
+              <img src="images/arrow-left.png" class="return-image">
+              <a href="index.html"></a>
+            </div>
+          </li>
+          <li class="header-li header-title" id="header-title-id"><h1>PICTURE</h1></li>
+        </ul>
+      </header>
+      <div class="row"></div>
+      <div class="container">
+        <div class="camera_wrap  camera_orange_skin" id="slide">
+          <div data-src="images/pic_1.jpg"></div>
+          <div data-src="images/pic_2.jpg"></div>
+          <div data-src="images/pic_3.jpg"></div>
+          <div data-src="images/pic_4.jpg"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
