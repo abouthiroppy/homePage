@@ -3,13 +3,11 @@ $(window).load(function() {
   $('.spinner').animate({
       'opacity' : 0
   }, 1000, 'easeOutCubic', function() {
-      jQuery(this).css('display', 'none')
+      $(this).css('display', 'none');
   });
 });
 
 $(document).ready(function(){
-  console.log("complete");
-
   $('.body-container:not(body#body-id .body-container)').css({display:'block',marginLeft:$(window).width(),opacity:'0'});
   $('.body-container:not(body#body-id .body-container)').animate({marginLeft:'0px',opacity:'1'},500);
 
@@ -21,8 +19,14 @@ $(document).ready(function(){
 
 var eventFunction = function(){
 
+  $('a').click(function(){
+    var url = $(this).attr('href');
+    if(url.indexOf("#") != -1) return;
+    jumpLink(url);
+  });
+
   $('div').click(function() {
-    id = $(this).attr("id");
+    var id = $(this).attr("id");
     if(id === undefined) return;
     if($("#"+id).find('a').attr('href') === undefined) return;
     jumpLink($("#"+id).find('a').attr('href'));
@@ -34,17 +38,30 @@ var eventFunction = function(){
   });
 
   var jumpLink = function(url){
-    $('.body-container').animate({marginLeft:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
-        location.href = url;
-        setTimeout(function(){
-          $('.body-container').css({marginLeft:'0',opacity:'1'})
-        },1000);
-      });
-    };
+    if(url == "index.html"){
+      $('.body-container').animate({marginRight:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
+          location.href = url;
+          setTimeout(function(){
+            $('.body-container').css({marginRight:'0',opacity:'1'})
+          },1000);
+        });
+    }
+    else{
+      $('.body-container').animate({marginLeft:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
+          location.href = url;
+          setTimeout(function(){
+            $('.body-container').css({marginLeft:'0',opacity:'1'})
+          },1000);
+        });
+    }
+  };
 
   //逃走の音を入れたい
   // easeInElastic
   $("#explode-tile").click(function(){
+    $("header").animate({opacity: 0}, 3000 );
+    $(".row").animate({opacity: 0}, 3000 );
+
     // 上の段
     $("#time-tile").animate({
       top:'700px',opacity:'0'},2800,"easeInElastic");
@@ -79,10 +96,38 @@ var eventFunction = function(){
     $("#profile-tile").animate({
       left:'700px',opacity:'0'},3000,"easeInBounce");
     $("#explode-tile").animate({
-      top:'700px',opacity:'0'},3200,"easeInBounce");
+      top:'700px',opacity:'0'},3200,"easeInBounce",function(){
+      $('.body-container').css('display','none');
+      $('body').append("<div class=\"android-icon\"><img src=\"images/Android_icon.png\" width=300,height=300><h1 style=\"opacity:0;\" id=\"android-comment\">set me free!</h1></div>");
+        // $('body').append("<div class=\"android-icon\"><ul class=\"android-icon-ul\"><li class=\"android-icon-li\"><img src=\"images/Android_icon.png\" width=300,height=300><h1>set me free!</h1></li><li class=\"android-icon-li\"><h2>yeah!</h2></li></div>");
+          $('.android-icon').animate({top:'150px'},1500,"easeOutBounce",function(){
+            $('#android-comment').animate({opacity:1,duration:1500,delay:700});
+            // $('.android-icon').mouseover(function(){
+            // });
+          });
+      });
   });
 
-  $(".start").mouseover(function(){
-    console.log('touch');
+ $('.start').on('mouseenter', function() {
+    $('.start').animate({color:'#007aff',duration:700});
+    timerId = setTimeout(function() {
+        //$('.start-container').css('display','inline');
+        //$('.start-container').animate({opacity:0.98,duration:250});
+        // $('.start-container').click(function(){
+        //   $('.start-container').animate({opacity:0,duration:250},function(){
+        //     $('.start-container').css('display','none');
+        //   });
+        // });
+      }, 710);
+    });
+  $('.start').on('mouseleave', function() {
+    $('.start').animate({color:'#222',duration:700});
+    clearTimeout(timerId);
+  });
+
+  // start select-code
+  $('.code-button').click(function(){
+    console.log('button-click');
+    $("#code").load('code/emacs.html');
   });
 };
