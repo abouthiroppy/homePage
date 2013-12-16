@@ -38,7 +38,7 @@ var eventFunction = function(){
   });
 
   var jumpLink = function(url){
-    if(url == "index.html"){
+    if(url == "index.html" || url.indexOf('http') != -1){
       $('.body-container').animate({marginRight:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
@@ -67,7 +67,7 @@ var eventFunction = function(){
       top:'700px',opacity:'0'},2800,"easeInElastic");
     $("#github-tile").animate({
       top:'700px',left:'700px',opacity:'0'},2800,"easeInElastic");
-    $("#aoj-tile").animate({
+    $("#link-tile").animate({
       right:'700px',opacity:'0'},2800,"easeInElastic");
     $("#twitter-tile").animate({
       left:'700px',opacity:'0'},2800,"easeInElastic");
