@@ -38,7 +38,8 @@ var eventFunction = function(){
   });
 
   var jumpLink = function(url){
-    if(url == "index.html" || url.indexOf('http') != -1){
+    // if(url == "index.html" || url.indexOf('http') != -1){
+    if(url == "index.html"){
       $('.body-container').animate({marginRight:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
