@@ -43,7 +43,7 @@ var eventFunction = function(){
       $('.body-container').animate({marginRight:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
-            $('.body-container').css({marginRight:'0',opacity:'1'})
+            $('.body-container').css({marginRight:'0',opacity:'0'})
           },1000);
         });
     }
@@ -51,7 +51,7 @@ var eventFunction = function(){
       $('.body-container').animate({marginLeft:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
-            $('.body-container').css({marginLeft:'0',opacity:'1'})
+            $('.body-container').css({marginLeft:'0',opacity:'0'})
           },1000);
         });
     }
