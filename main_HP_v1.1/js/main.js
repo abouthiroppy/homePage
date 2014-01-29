@@ -39,11 +39,12 @@ var eventFunction = function(){
   });
 
   var jumpLink = function(url){
-    if(url == "index.html" || url.indexOf('http') != -1){
+    // if(url == "index.html" || url.indexOf('http') != -1){
+    if(url == "index.html"){
       $('.body-container').animate({marginRight:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
-            $('.body-container').css({marginRight:'0',opacity:'1'})
+            $('.body-container').css({marginRight:'0',opacity:'0'})
           },1000);
         });
     }
@@ -51,7 +52,7 @@ var eventFunction = function(){
       $('.body-container').animate({marginLeft:'-=' + $(window).width() + 'px',opacity:'0'},500,function(){
           location.href = url;
           setTimeout(function(){
-            $('.body-container').css({marginLeft:'0',opacity:'1'})
+            $('.body-container').css({marginLeft:'0',opacity:'0'})
           },1000);
         });
     }
