@@ -1,3 +1,5 @@
+google.load("feeds", "1");
+
 $(window).load(function() {
   // $('.spinner').append("<h1 class=\"loader\"><span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span></h1>");
   // $('.spinner').animate({
@@ -9,6 +11,14 @@ $(window).load(function() {
 });
 
 $(document).ready(function(){
+  var file_url = location.href;
+  file_url = file_url.substring(file_url.lastIndexOf("/")+1,file_url.length);
+  file_url = file_url.substring(0,file_url.indexOf("."));
+
+  if(file_url === "index" || file_url === ""){
+    $("#ticker").jStockTicker({interval: 20});
+    getbloginfo();
+  }
   $('.body-container:not(body#body-id .body-container)').css({display:'block',marginLeft:$(window).width(),opacity:'0'});
   $('.body-container:not(body#body-id .body-container)').animate({marginLeft:'0px',opacity:'1'},500);
 
@@ -17,6 +27,24 @@ $(document).ready(function(){
 
   eventFunction();
 });
+
+var getbloginfo = function(){
+  var feedurl = "http://d.hatena.ne.jp/about_hiroppy/rss2";
+  var feed = new google.feeds.Feed(feedurl);
+  feed.load(function (result){
+    if (!result.error){
+      // console.log(result.feed.entries);
+      for(var i=0;i<result.feed.entries.length;i++){
+        if(result.feed.entries[i].title === "サイト") continue;
+        $("#ticker").append("<a class= \"ticker-a\" href="+result.feed.entries[i].link+" >"+result.feed.entries[i].title+"</a>");
+      }
+
+    }
+    else{
+      $("#ticker").append("<span>error</span>");
+    }
+  });
+};
 
 var eventFunction = function(){
 
@@ -63,7 +91,7 @@ var eventFunction = function(){
   $("#explode-tile").click(function(){
     $("header").animate({opacity: 0}, 3000 );
     $(".row").animate({opacity: 0}, 3000 );
-
+    $(".ticker-row").animate({opacity:0},2000);
     // 上の段
     $("#time-tile").animate({
       top:'700px',opacity:'0'},2800,"easeInElastic");
