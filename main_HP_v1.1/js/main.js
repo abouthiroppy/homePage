@@ -29,13 +29,14 @@ $(document).ready(function(){
 });
 
 var getbloginfo = function(){
-  var feedurl = "http://d.hatena.ne.jp/about_hiroppy/rss2";
+  var feedurl = "http://d.hatena.ne.jp/about_hiroppy/rss";
   var feed = new google.feeds.Feed(feedurl);
   feed.load(function (result){
     if (!result.error){
-      // console.log(result.feed.entries);
+      console.log(result.feed.entries);
       for(var i=0;i<result.feed.entries.length;i++){
         if(result.feed.entries[i].title === "サイト") continue;
+                console.log(result.feed.entries[i].title);
         $("#ticker").append("<a class= \"ticker-a\" href="+result.feed.entries[i].link+" >"+result.feed.entries[i].title+"</a>");
       }
 
