@@ -113,7 +113,7 @@ var eventFunction = function(){
       top:'700px',opacity:'0'},3000,"easeInElastic");
     $("#iphone-app-tile").animate({
       right:'700px',opacity:'0'},3000,"easeInElastic");
-    $("#twitter-bot-tile").animate({
+    $("#record-my-place-tile").animate({
       left:'700px',opacity:'0'},3000,"easeInElastic");
     $("#web-app-tile").animate({
       top:'700px',opacity:'0'},3000,"easeInElastic");
